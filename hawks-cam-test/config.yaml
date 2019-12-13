@@ -13,8 +13,8 @@ rules:
     plugin: "rbb_tools.plugins.video_extractor"
     config:
       frame_rate: 15
-      frame_height: 1440
-      frame_width: 1080
+      frame_height: 1080
+      frame_width: 1440
       text_x: 90
       text_y: 5
     topic_matchers:
