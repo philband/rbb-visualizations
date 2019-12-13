@@ -1,0 +1,26 @@
+# Title of this configuration file
+title: "HAWKS Camera Test"
+# Tag that identifies this configuration file.
+tag: "hawks-camera-test"
+# Description of this configuration file
+description: ""
+# Author of this configuration file
+author: ""
+
+# Extraction rules
+rules:
+  raw-camera-output:
+    plugin: "rbb_tools.plugins.video_extractor"
+    config:
+      frame_rate: 15
+      frame_height: 1440
+      frame_width: 1080
+      text_x: 90
+      text_y: 5
+    topic_matchers:
+      - type: "rbb_tools.extraction.matchers.ExactMatchingRule"
+        config:
+          topics:
+            /pylon_camera_node/image_raw: "sensor_msgs/Image"
+          remapping:
+            /pylon_camera_node/image_raw: "/image"
